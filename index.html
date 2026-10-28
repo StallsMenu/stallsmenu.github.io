@@ -3,38 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Food Stalls Menu</title>
+<title>Menu – Stalls &amp; SOM</title>
 <script data-goatcounter="https://stallsmenu.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
 :root{--bg:#F7F4EE;--card:#FFFFFF;--ink:#1C2321;--muted:#5A6461;--accent:#0F5C55;--accent2:#A24A17;--rule:#DCD6CB}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
 .wrap{max-width:560px;margin:0 auto;padding:0 16px 48px}
-header{text-align:center;padding:36px 8px 20px}
+header{text-align:center;padding:32px 8px 18px}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2)}
 h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:40px;line-height:1.05;margin:8px 0 0;color:var(--accent)}
+.view{display:none}
+body[data-view="home"] #home, body[data-view="stalls"] #stalls, body[data-view="som"] #som{display:block}
+.choices{display:grid;gap:16px;margin-top:8px}
+.choice{display:flex;align-items:center;gap:18px;padding:22px 20px;background:var(--card);border:2px solid var(--accent);border-radius:20px;text-decoration:none;color:var(--ink)}
+.choice:active{background:#EEF4F2}
+.choice .t1{font-family:Georgia,"Times New Roman",serif;font-size:28px;color:var(--accent);line-height:1.1}
+.choice .t2{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.4}
+.choice .go{margin-left:auto;font-size:28px;color:var(--accent2)}
+.back{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 14px;border-radius:999px;border:1px solid var(--rule);background:var(--card);color:var(--accent);text-decoration:none;font-size:14px;font-weight:600}
 nav{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;margin:0 -16px 8px;border-bottom:1px solid var(--rule);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
 nav .row{display:inline-flex;gap:8px;padding:0 16px}
 nav a{display:inline-block;padding:9px 14px;border-radius:999px;border:1px solid var(--rule);background:var(--card);color:var(--accent);text-decoration:none;font-size:14px;font-weight:600}
+nav a.home{background:var(--accent);color:#fff;border-color:var(--accent)}
 section{background:var(--card);border-radius:16px;padding:20px 18px;margin-top:16px;scroll-margin-top:70px;border:1px solid #ECE7DD}
 h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:26px;margin:0 0 4px;color:var(--accent)}
 h3{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin:18px 0 4px}
+.note{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin:2px 0 4px}
 ul{list-style:none;margin:0;padding:0}
 li{display:flex;align-items:center;gap:14px;padding:8px 0;border-bottom:1px dotted var(--rule);font-size:16px}
+li.t{align-items:baseline;padding:11px 0}
 li:last-child{border-bottom:0}
 .ic{flex:none;width:56px;height:56px;border-radius:14px;background:#F3EEE4;display:flex;align-items:center;justify-content:center}
 .nm{flex:1}
+.ds{display:block;font-size:13px;color:var(--muted);line-height:1.45;margin-top:4px}
 .price{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:15px}
 footer{text-align:center;color:var(--muted);font-size:13px;margin-top:28px}
 </style>
 </head>
-<body>
+<body data-view="home">
 <div class="wrap">
+
+<div id="home" class="view">
+<header>
+  <div class="eyebrow">Welcome</div>
+  <h1>What would you like to see?</h1>
+</header>
+<div class="choices">
+  <a class="choice" href="#stalls"><svg viewBox="0 0 64 64" width="72" height="72" aria-hidden="true" stroke="#3B2A20" stroke-width="2" stroke-linejoin="round"><path d="M8 20 L14 10 H50 L56 20 Z" fill="#E85D75"/><path d="M8 20 q4 6 8 0 q4 6 8 0 q4 6 8 0 q4 6 8 0 q4 6 8 0 q4 6 8 0 Z" fill="#FFF0F3"/><rect x="12" y="26" width="40" height="26" fill="#F7E3C0"/><rect x="8" y="40" width="48" height="6" fill="#C98A4B"/><path d="M12 52 V58 M52 52 V58" fill="none"/><circle cx="22" cy="36" r="3" fill="#F6C445"/><circle cx="32" cy="35" r="3" fill="#6B3E1F"/><circle cx="42" cy="36" r="3" fill="#E85D75"/></svg><span><span class="t1">Food Stalls</span><span class="t2" style="display:block">Baked goods, Gilgiti appetizers, chatkhara, dumplings &amp; drinks</span></span><span class="go" aria-hidden="true">›</span></a>
+  <a class="choice" href="#som"><svg viewBox="0 0 64 64" width="72" height="72" aria-hidden="true" stroke="#3B2A20" stroke-width="2" stroke-linejoin="round"><path d="M10 44 Q10 22 32 22 Q54 22 54 44 Z" fill="#C9CFCD"/><circle cx="32" cy="19" r="3" fill="#C9CFCD"/><rect x="6" y="44" width="52" height="5" rx="2.5" fill="#FFFFFF"/><path d="M20 34 Q24 28 30 27" fill="none" stroke="#FFFFFF" stroke-width="2.5"/></svg><span><span class="t1">SOM Menu</span><span class="t2" style="display:block">Station Officers' Mess – full menu with prices</span></span><span class="go" aria-hidden="true">›</span></a>
+</div>
+</div>
+
+<div id="stalls" class="view">
+<a class="back" href="#home">‹ Back</a>
 <header>
   <div class="eyebrow">Tonight's stalls</div>
   <h1>Food Stalls Menu</h1>
 </header>
-<nav aria-label="Stalls"><div class="row"><a href="#baked">Baked Goods</a><a href="#gilgiti">Gilgiti Appetizers</a><a href="#chatkhara">Chatkhara</a><a href="#dumplings">Dumplings</a><a href="#beverages">Beverages</a></div></nav>
+<nav aria-label="Stalls"><div class="row"><a class="home" href="#som">SOM Menu ›</a><a href="#baked">Baked Goods</a><a href="#gilgiti">Gilgiti Appetizers</a><a href="#chatkhara">Chatkhara</a><a href="#dumplings">Dumplings</a><a href="#beverages">Beverages</a></div></nav>
 <section id="baked">
   <h2>Homemade Baked Goods</h2>
   <h3>Cakes (by slice)</h3>
@@ -64,7 +91,150 @@ footer{text-align:center;color:var(--muted);font-size:13px;margin-top:28px}
   <h2>Beverages</h2>
   <ul><li><span class="ic"><svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true" stroke="#3B2A20" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="52" rx="24" ry="5" fill="#FFFFFF"/><path d="M14 22 H46 V46 Q46 50 42 50 H18 Q14 50 14 46 Z" fill="#2F6B65"/><path d="M46 28 Q56 28 55 36 Q54 42 46 41" fill="none"/><ellipse cx="30" cy="23" rx="15" ry="3.5" fill="#6B3E1F"/><path d="M26 23 q4 -2 8 0" fill="none" stroke="#E9D3B5" stroke-width="1.5"/><path d="M24 16 Q22 12 25 9 M32 16 Q30 11 33 7" fill="none" stroke="#9AA5A2"/></svg></span><span class="nm">Coffee</span><span class="price"></span></li><li><span class="ic"><svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true" stroke="#3B2A20" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="52" rx="24" ry="5" fill="#FFFFFF"/><path d="M14 26 H46 V40 Q46 50 30 50 Q14 50 14 40 Z" fill="#FFFFFF"/><path d="M46 30 Q56 30 54 38 Q52 44 45 42" fill="none"/><ellipse cx="30" cy="27" rx="15" ry="3.5" fill="#9C5A2B"/><path d="M24 20 Q22 16 25 13 M32 20 Q30 15 33 11" fill="none" stroke="#9AA5A2"/><path d="M38 27 L40 38" fill="none" stroke-width="1"/><rect x="37" y="38" width="6" height="7" fill="#F6C445" stroke-width="1.2"/></svg></span><span class="nm">Tea</span><span class="price"></span></li><li><span class="ic"><svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true" stroke="#3B2A20" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="52" rx="24" ry="5" fill="#FFFFFF"/><path d="M14 26 H46 V40 Q46 50 30 50 Q14 50 14 40 Z" fill="#FFFFFF"/><path d="M46 30 Q56 30 54 38 Q52 44 45 42" fill="none"/><ellipse cx="30" cy="27" rx="15" ry="3.5" fill="#E7A6B4"/><path d="M24 20 Q22 16 25 13 M32 20 Q30 15 33 11" fill="none" stroke="#9AA5A2"/><circle cx="27" cy="27" r="1.3" fill="#8DB255" stroke="none"/><circle cx="33" cy="26.5" r="1.3" fill="#8DB255" stroke="none"/></svg></span><span class="nm">Kashmiri Tea</span><span class="price"></span></li><li><span class="ic"><svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true" stroke="#3B2A20" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="32" cy="52" rx="24" ry="5" fill="#FFFFFF"/><path d="M14 26 H46 V40 Q46 50 30 50 Q14 50 14 40 Z" fill="#FFFFFF"/><path d="M46 30 Q56 30 54 38 Q52 44 45 42" fill="none"/><ellipse cx="30" cy="27" rx="15" ry="3.5" fill="#B5C96A"/><path d="M24 20 Q22 16 25 13 M32 20 Q30 15 33 11" fill="none" stroke="#9AA5A2"/><path d="M36 22 q4 -6 9 -4 q-2 6 -9 4 Z" fill="#6BBF59" stroke-width="1.2"/></svg></span><span class="nm">Green Tea</span><span class="price"></span></li></ul>
 </section>
+</div>
+
+<div id="som" class="view">
+<a class="back" href="#home">‹ Back</a>
+<header>
+  <div class="eyebrow">Station Officers' Mess</div>
+  <h1>SOM Menu</h1>
+</header>
+<nav aria-label="SOM sections"><div class="row"><a class="home" href="#stalls">Stalls ›</a><a href="#som-starters">Starters</a><a href="#som-bbq">BBQ</a><a href="#som-bbqplatters">BBQ Platters</a><a href="#som-namakmandi">Namak Mandi</a><a href="#som-daal">Daal & Sabzi</a><a href="#som-ricepk">Rice (Pak)</a><a href="#som-ricecn">Rice (Chinese)</a><a href="#som-chinese">Chinese</a><a href="#som-club">Club</a><a href="#som-italian">Italian</a><a href="#som-florina">Florina</a><a href="#som-platters">Platters</a><a href="#som-steaks">Steaks</a><a href="#som-fastfood">Fast Food</a><a href="#som-burgers">Burgers</a><a href="#som-wings">Wings</a><a href="#som-pizza">Pizza</a><a href="#som-cafe">Café</a><a href="#som-tandoor">Naan</a><a href="#som-salad">Salads</a><a href="#som-desserts">Desserts</a><a href="#som-desserts-bowl">Dessert Bowls</a><a href="#som-coffee">Coffee & Tea</a><a href="#som-chillers">Chillers</a><a href="#som-beverages">Beverages</a><a href="#som-juice">Juice</a><a href="#som-colddrinks">Cold Drinks</a></div></nav>
+<section id="som-starters">
+  <h2>Starters</h2>
+  <ul><li class="t"><span class="nm">Chicken Corn Soup</span><span class="price">Rs 200</span></li><li class="t"><span class="nm">Hot &amp; Sour Soup</span><span class="price">Rs 200</span></li><li class="t"><span class="nm">Chicken Cream Soup</span><span class="price">Rs 220</span></li><li class="t"><span class="nm">Fish Crackers</span><span class="price">On demand</span></li></ul>
+</section>
+<section id="som-bbq">
+  <h2>BBQ Corner</h2>
+  <ul><li class="t"><span class="nm">Chicken Tikka (single piece)</span><span class="price">Rs 310</span></li><li class="t"><span class="nm">Tikka Boti (full chicken)</span><span class="price">Rs 1,350</span></li><li class="t"><span class="nm">Malai Boti (full chicken)</span><span class="price">Rs 1,550</span></li><li class="t"><span class="nm">Chicken Seekh Kabab</span><span class="price">Rs 140</span></li><li class="t"><span class="nm">Reshmi Seekh Kabab</span><span class="price">Rs 190</span></li></ul>
+</section>
+<section id="som-bbqplatters">
+  <h2>BBQ Platters</h2>
+  <ul><li class="t"><span class="nm">Platter – 2 persons<span class="ds">Plain pulao · Malai boti (4) · Tikka boti (4) · Reshmi seekh kabab (1) · Chicken seekh kabab (1) · Beef seekh kabab (1) · Turkish kabab (1)</span></span><span class="price">Rs 1,799</span></li><li class="t"><span class="nm">Platter – 4/5 persons<span class="ds">Plain pulao · Malai boti (8) · Tikka boti (8) · Reshmi seekh kabab (2) · Chicken seekh kabab (2) · Beef seekh kabab (2) · Turkish kabab (2)</span></span><span class="price">Rs 3,499</span></li><li class="t"><span class="nm">Platter – 4/5 persons (with handi)<span class="ds">Plain pulao · Malai boti (8) · Tikka boti (8) · Reshmi, chicken, beef seekh &amp; Turkish kabab (2 each) · Red boneless handi (half) · 2 naan · 1.5 L cold drink · Raita &amp; salad</span></span><span class="price">Rs 4,499</span></li><li class="t"><span class="nm">Platter – 6/8 persons<span class="ds">Plain pulao · Malai boti (8) · Tikka boti (8) · Reshmi seekh kabab (4) · Chicken seekh kabab (4) · Beef seekh kabab (4) · Turkish kabab (4)</span></span><span class="price">Rs 5,199</span></li><li class="t"><span class="nm">Platter – 6/8 persons (with handi)<span class="ds">Plain pulao · Malai boti (8) · Tikka boti (8) · Reshmi, chicken, beef seekh &amp; Turkish kabab (4 each) · Red boneless handi (750 g) · 4 naan · 1.5 L cold drink · Raita · Salad</span></span><span class="price">Rs 6,699</span></li></ul>
+</section>
+<section id="som-namakmandi">
+  <h2>Namak Mandi</h2>
+  <ul><li class="t"><span class="nm">Chicken Karahi</span><span class="price">Rs 1,500</span></li><li class="t"><span class="nm">Chicken White Karahi</span><span class="price">Rs 1,600</span></li><li class="t"><span class="nm">Peshawari Karahi</span><span class="price">Rs 1,450</span></li><li class="t"><span class="nm">Chicken Boneless Handi (Red)</span><span class="price">Rs 1,550</span></li><li class="t"><span class="nm">Chicken Boneless Handi (White)</span><span class="price">Rs 1,650</span></li><li class="t"><span class="nm">Chicken Badami Qorma</span><span class="price">Rs 1,800</span></li><li class="t"><span class="nm">Seekh Kabab Karahi</span><span class="price">Ask at counter</span></li><li class="t"><span class="nm">Mutton Karahi</span><span class="price">Rs 2,800</span></li><li class="t"><span class="nm">Namkeen Gosht</span><span class="price">Rs 2,650</span></li></ul>
+</section>
+<section id="som-daal">
+  <h2>Daal &amp; Sabzi</h2>
+  <ul><li class="t"><span class="nm">Palak Paneer</span><span class="price">Rs 700</span></li><li class="t"><span class="nm">Daal Makhni</span><span class="price">Rs 800</span></li><li class="t"><span class="nm">Mix Veg</span><span class="price">Rs 850</span></li><li class="t"><span class="nm">Dahi Bhallay</span><span class="price">Rs 950</span></li><li class="t"><span class="nm">Aloo Achari Bhujia</span><span class="price">Rs 800</span></li></ul>
+</section>
+<section id="som-ricepk">
+  <h2>Rice – Pakistani</h2>
+  <div class="note">Serves 4</div>
+  <ul><li class="t"><span class="nm">Chicken Pulao</span><span class="price">Rs 1,200</span></li><li class="t"><span class="nm">Chana Pulao</span><span class="price">Rs 900</span></li><li class="t"><span class="nm">Plain Pulao</span><span class="price">Rs 800</span></li><li class="t"><span class="nm">Kabuli Pulao</span><span class="price">Rs 1,250</span></li><li class="t"><span class="nm">Chicken Biryani</span><span class="price">Rs 1,500</span></li></ul>
+</section>
+<section id="som-ricecn">
+  <h2>Rice – Chinese</h2>
+  <div class="note">Serves 4</div>
+  <ul><li class="t"><span class="nm">Veg Rice</span><span class="price">Rs 700</span></li><li class="t"><span class="nm">Egg Fried Rice</span><span class="price">Rs 850</span></li><li class="t"><span class="nm">Manchurian</span><span class="price">Rs 950</span></li><li class="t"><span class="nm">Chicken Sweet &amp; Sour</span><span class="price">Rs 950</span></li><li class="t"><span class="nm">Chicken Chowmein</span><span class="price">Rs 1,250</span></li></ul>
+</section>
+<section id="som-chinese">
+  <h2>Chinese Cuisine</h2>
+  <div class="note">Single serving</div>
+  <ul><li class="t"><span class="nm">Chicken Chilli Dry with Egg Fried Rice</span><span class="price">Rs 600</span></li><li class="t"><span class="nm">Cashew Chicken with Egg Fried Rice</span><span class="price">Rs 550</span></li><li class="t"><span class="nm">Chicken Chowmein</span><span class="price">Rs 400</span></li></ul>
+</section>
+<section id="som-club">
+  <h2>Club Specialities</h2>
+  <ul><li class="t"><span class="nm">Chicken Haleem</span><span class="price">Rs 250</span></li><li class="t"><span class="nm">Fish Fries (boneless)</span><span class="price">Rs 2,600</span></li><li class="t"><span class="nm">Grilled Fish (boneless)</span><span class="price">Rs 2,500</span></li><li class="t"><span class="nm">Grilled Fish (with bones)</span><span class="price">Rs 1,600</span></li></ul>
+</section>
+<section id="som-italian">
+  <h2>Italian</h2>
+  <ul><li class="t"><span class="nm">Buffalo Wings</span><span class="price">Rs 450</span></li><li class="t"><span class="nm">French Fries</span><span class="price">Rs 300</span></li><li class="t"><span class="nm">Masala Fries + Dip</span><span class="price">Rs 350</span></li><li class="t"><span class="nm">Nachos</span><span class="price">Rs 220</span></li><li class="t"><span class="nm">Loaded Fries – Small</span><span class="price">Rs 450</span></li><li class="t"><span class="nm">Loaded Fries – Large</span><span class="price">Rs 650</span></li><li class="t"><span class="nm">Alfredo Pasta</span><span class="price">Rs 700</span></li><li class="t"><span class="nm">Chicken Lasagna</span><span class="price">Rs 490</span></li><li class="t"><span class="nm">Jalapeño Pasta</span><span class="price">Rs 750</span></li><li class="t"><span class="nm">Spanish Pasta</span><span class="price">Rs 500</span></li></ul>
+</section>
+<section id="som-florina">
+  <h2>Florina Specialities</h2>
+  <ul><li class="t"><span class="nm">Chicken Fingers</span><span class="price">Rs 400</span></li><li class="t"><span class="nm">Stuffed Chicken Spanish Roll</span><span class="price">Rs 750</span></li><li class="t"><span class="nm">Crispy Stuffed Cheese Chicken</span><span class="price">Rs 700</span></li><li class="t"><span class="nm">Tarragon Chicken</span><span class="price">Rs 700</span></li><li class="t"><span class="nm">Parmesan Chicken</span><span class="price">Rs 700</span></li></ul>
+</section>
+<section id="som-platters">
+  <h2>Platters</h2>
+  <ul><li class="t"><span class="nm">Chinese Platter<span class="ds">Chinese rice · Cashew chicken · Chicken fingers · Parmesan chicken · Fruit salad</span></span><span class="price">Rs 1,200</span></li><li class="t"><span class="nm">Florina Special Platter<span class="ds">Chicken fingers · Nuggets · Lasagna · Burger · Fruit salad · Macaroni salad</span></span><span class="price">Rs 850</span></li></ul>
+</section>
+<section id="som-steaks">
+  <h2>Steaks</h2>
+  <ul><li class="t"><span class="nm">Black Pepper Steak</span><span class="price">Rs 950</span></li><li class="t"><span class="nm">Mushroom Steak</span><span class="price">Rs 950</span></li><li class="t"><span class="nm">Jalapeño Steak</span><span class="price">Rs 970</span></li><li class="t"><span class="nm">Beef Steak</span><span class="price">Rs 2,000</span></li></ul>
+</section>
+<section id="som-fastfood">
+  <h2>Fast Food</h2>
+  <ul><li class="t"><span class="nm">Chicken Tikki Patty Burger</span><span class="price">Rs 520</span></li><li class="t"><span class="nm">Chicken Patty Jalapeño Burger</span><span class="price">Rs 540</span></li><li class="t"><span class="nm">Fajita Burger</span><span class="price">Rs 520</span></li><li class="t"><span class="nm">Grilled Chicken Burger</span><span class="price">Rs 550</span></li><li class="t"><span class="nm">Florina Special Sandwich</span><span class="price">Rs 500</span></li><li class="t"><span class="nm">Tikka Sandwich</span><span class="price">Rs 420</span></li></ul>
+</section>
+<section id="som-burgers">
+  <h2>Burgers</h2>
+  <ul><li class="t"><span class="nm">Beef Burger</span><span class="price">Rs 600</span></li><li class="t"><span class="nm">Grill Burger</span><span class="price">Rs 550</span></li><li class="t"><span class="nm">Zinger Burger</span><span class="price">Rs 550</span></li><li class="t"><span class="nm">Tikka Burger</span><span class="price">Rs 430</span></li><li class="t"><span class="nm">Crispy Burger</span><span class="price">Rs 450</span></li></ul>
+</section>
+<section id="som-wings">
+  <h2>Wings</h2>
+  <div class="note">4 pieces</div>
+  <ul><li class="t"><span class="nm">Spicy Wings</span><span class="price">Rs 450</span></li><li class="t"><span class="nm">Hot Wings</span><span class="price">Rs 450</span></li><li class="t"><span class="nm">Honey Wings</span><span class="price">Rs 500</span></li></ul>
+</section>
+<section id="som-pizza">
+  <h2>Pizza</h2>
+  <div class="note">Small · Medium · Large</div>
+  <ul><li class="t"><span class="nm">Club Special Pizza</span><span class="price">700 · 1,080 · 1,500</span></li><li class="t"><span class="nm">Chicken Tikka Pizza</span><span class="price">690 · 1,070 · 1,480</span></li><li class="t"><span class="nm">Chicken Fajita Pizza</span><span class="price">680 · 1,060 · 1,490</span></li><li class="t"><span class="nm">Cheese Lover Pizza</span><span class="price">700 · 1,080 · 1,490</span></li><li class="t"><span class="nm">Pepperoni Pizza</span><span class="price">680 · 1,060 · 1,490</span></li><li class="t"><span class="nm">Calzone Pizza</span><span class="price">700 · 1,090 · 1,500</span></li><li class="t"><span class="nm">Four Season Pizza</span><span class="price">– · 1,300 · 1,800</span></li></ul>
+</section>
+<section id="som-cafe">
+  <h2>Café Cravings</h2>
+  <ul><li class="t"><span class="nm">Arabian Sandwich</span><span class="price">Rs 200</span></li><li class="t"><span class="nm">Shawarma</span><span class="price">Rs 200</span></li><li class="t"><span class="nm">Fried Wings</span><span class="price">Rs 450</span></li><li class="t"><span class="nm">Brownies</span><span class="price">Rs 210</span></li><li class="t"><span class="nm">Fish &amp; Chips</span><span class="price">Rs 750</span></li></ul>
+</section>
+<section id="som-tandoor">
+  <h2>Tandoori Corner</h2>
+  <ul><li class="t"><span class="nm">Plain Naan</span><span class="price">Rs 30</span></li><li class="t"><span class="nm">Til Naan</span><span class="price">Rs 40</span></li><li class="t"><span class="nm">Roghni Naan</span><span class="price">Rs 50</span></li><li class="t"><span class="nm">Garlic Naan</span><span class="price">Rs 50</span></li><li class="t"><span class="nm">Tandoori Paratha</span><span class="price">Rs 90</span></li></ul>
+</section>
+<section id="som-salad">
+  <h2>Salads</h2>
+  <ul><li class="t"><span class="nm">Mix Fruit Salad</span><span class="price">Rs 300</span></li><li class="t"><span class="nm">Macaroni Salad</span><span class="price">Rs 200</span></li><li class="t"><span class="nm">Keto Salad</span><span class="price">Rs 230</span></li><li class="t"><span class="nm">Russian Salad</span><span class="price">Rs 900</span></li><li class="t"><span class="nm">Fresh Salad</span><span class="price">Rs 150</span></li><li class="t"><span class="nm">Raita</span><span class="price">Rs 60</span></li><li class="t"><span class="nm">Kachumar Salad</span><span class="price">Rs 180</span></li></ul>
+</section>
+<section id="som-desserts">
+  <h2>Desserts</h2>
+  <ul><li class="t"><span class="nm">Molten Lava with Ice Cream</span><span class="price">Rs 450</span></li><li class="t"><span class="nm">Oreo Delight</span><span class="price">Rs 180</span></li><li class="t"><span class="nm">Cheesecake (1 slice)</span><span class="price">Rs 250</span></li><li class="t"><span class="nm">Cheesecake (2 lb)</span><span class="price">Rs 2,660</span></li><li class="t"><span class="nm">Three Milk Cake (1 slice)</span><span class="price">Rs 200</span></li><li class="t"><span class="nm">Three Milk Cake (1 lb)</span><span class="price">Rs 1,300</span></li><li class="t"><span class="nm">Three Milk Cake (2 lb)</span><span class="price">Rs 2,200</span></li></ul>
+</section>
+<section id="som-desserts-bowl">
+  <h2>Desserts by the Bowl</h2>
+  <div class="note">On demand</div>
+  <ul><li class="t"><span class="nm">Kheer Mix (bowl)</span><span class="price">Rs 850</span></li><li class="t"><span class="nm">Fruit Trifle (bowl)</span><span class="price">Rs 950</span></li><li class="t"><span class="nm">Rabri Kheer (bowl)</span><span class="price">Rs 1,350</span></li><li class="t"><span class="nm">Oreo Delight (bowl)</span><span class="price">Rs 1,500</span></li><li class="t"><span class="nm">Pineapple Delight (bowl)</span><span class="price">Rs 1,500</span></li><li class="t"><span class="nm">Mango Delight (bowl)</span><span class="price">Ask at counter</span></li><li class="t"><span class="nm">Gulab Jamun</span><span class="price">On demand</span></li><li class="t"><span class="nm">Gajar Halwa</span><span class="price">Ask at counter</span></li></ul>
+</section>
+<section id="som-coffee">
+  <h2>Coffee &amp; Tea</h2>
+  <ul><li class="t"><span class="nm">Espresso</span><span class="price">Rs 300</span></li><li class="t"><span class="nm">Long Black</span><span class="price">Rs 180</span></li><li class="t"><span class="nm">Cappuccino</span><span class="price">Rs 300</span></li><li class="t"><span class="nm">Latte</span><span class="price">Rs 300</span></li><li class="t"><span class="nm">Cardamom Tea</span><span class="price">Rs 130</span></li><li class="t"><span class="nm">Hand-mixed Coffee</span><span class="price">Rs 250</span></li><li class="t"><span class="nm">Tea</span><span class="price">Rs 70</span></li><li class="t"><span class="nm">Green Tea</span><span class="price">Rs 50</span></li></ul>
+</section>
+<section id="som-chillers">
+  <h2>Chillers</h2>
+  <ul><li class="t"><span class="nm">Chilled Milo</span><span class="price">Rs 100</span></li><li class="t"><span class="nm">Piña Colada</span><span class="price">Rs 250</span></li><li class="t"><span class="nm">Vanilla Shake</span><span class="price">Rs 250</span></li><li class="t"><span class="nm">Oreo Shake</span><span class="price">Rs 250</span></li><li class="t"><span class="nm">Cold Coffee</span><span class="price">Rs 300</span></li></ul>
+</section>
+<section id="som-beverages">
+  <h2>Beverages</h2>
+  <ul><li class="t"><span class="nm">Mint Margarita</span><span class="price">Rs 140</span></li><li class="t"><span class="nm">Fresh Lime</span><span class="price">Rs 110</span></li><li class="t"><span class="nm">Lemon Pani</span><span class="price">Rs 90</span></li></ul>
+</section>
+<section id="som-juice">
+  <h2>Fresh Juice</h2>
+  <div class="note">In season</div>
+  <ul><li class="t"><span class="nm">Strawberry</span><span class="price">Ask at counter</span></li><li class="t"><span class="nm">Mango</span><span class="price">Ask at counter</span></li><li class="t"><span class="nm">Peach</span><span class="price">Ask at counter</span></li></ul>
+</section>
+<section id="som-colddrinks">
+  <h2>Cold Drinks &amp; Water</h2>
+  <ul><li class="t"><span class="nm">Cold Drink (1.5 L)</span><span class="price">Rs 220</span></li><li class="t"><span class="nm">Cold Drink (1 L)</span><span class="price">Rs 150</span></li><li class="t"><span class="nm">Cold Drink (500 ml)</span><span class="price">Rs 80</span></li><li class="t"><span class="nm">Cold Drink (tin)</span><span class="price">Rs 130</span></li><li class="t"><span class="nm">Mineral Water (1.5 L)</span><span class="price">Rs 110</span></li><li class="t"><span class="nm">Mineral Water (500 ml)</span><span class="price">Rs 70</span></li></ul>
+</section>
+</div>
+
 <footer>Enjoy your evening</footer>
 </div>
+<script>
+(function(){
+  var STALLS = ['baked', 'gilgiti', 'chatkhara', 'dumplings', 'beverages'];
+  function route(){
+    var h = (location.hash || '').slice(1);
+    var view = 'home';
+    if (h === 'stalls' || STALLS.indexOf(h) > -1) view = 'stalls';
+    else if (h.indexOf('som') === 0) view = 'som';
+    var changed = document.body.getAttribute('data-view') !== view;
+    document.body.setAttribute('data-view', view);
+    if (h === 'stalls' || h === 'som' || h === 'home' || h === '') { window.scrollTo(0, 0); }
+    else if (changed) { var el = document.getElementById(h); if (el) el.scrollIntoView(); }
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
 </body>
 </html>
